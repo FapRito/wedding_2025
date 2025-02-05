@@ -36,5 +36,4 @@ guestbookForm.addEventListener("submit", function (e) {
     guestbookEntries.appendChild(entry);
 
     // Xóa form sau khi gửi
-    guestbookForm.reset();
 });
