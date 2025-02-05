@@ -3,118 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Wedding</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Trang Web Đám Cưới</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-image: url('path_to_your_image.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    <header class="parallax">
-        <div class="header-content">
-            <h1 class="bride-groom-name">John & Jane</h1>
-            <p>Ngày cưới: 12/12/2025</p>
-            <div id="countdown"></div>
-            <button id="music-toggle">🎵 Bật/Tắt nhạc</button>
-            <audio id="background-music" loop>
-                <source src="wedding_music.mp3" type="audio/mpeg">
-            </audio>
-        </div>
-    </header>
-    
-    <nav class="navbar">
-        <ul>
-            <li><a href="#story">Câu chuyện</a></li>
-            <li><a href="#gallery">Ảnh cưới</a></li>
-            <li><a href="#timeline">Hành trình</a></li>
-            <li><a href="#wishes">Lời chúc</a></li>
-            <li><a href="#map">Bản đồ</a></li>
-        </ul>
-    </nav>
-    
-    <section id="story" class="section reveal">
-        <div class="container">
-            <h2>Câu chuyện tình yêu</h2>
-            <p>Chúng tôi gặp nhau vào một ngày đẹp trời...</p>
-        </div>
-    </section>
-    
-    <section id="gallery" class="section gallery reveal">
-        <div class="container">
-            <h2>Ảnh cưới</h2>
-            <div class="grid">
-                <img src="image1.jpg" alt="Ảnh cưới">
-                <img src="image2.jpg" alt="Ảnh cưới">
-            </div>
-        </div>
-    </section>
-    
-    <section id="timeline" class="section reveal">
-        <div class="container">
-            <h2>Hành trình tình yêu</h2>
-            <ul>
-                <li><span>2019</span> - Lần đầu gặp nhau</li>
-                <li><span>2021</span> - Lời tỏ tình đầu tiên</li>
-                <li><span>2025</span> - Ngày cưới</li>
-            </ul>
-        </div>
-    </section>
-    
-    <section id="wishes" class="section reveal">
-        <div class="container">
-            <h2>Gửi lời chúc</h2>
-            <form id="wish-form">
-                <input type="text" id="wish-input" placeholder="Nhập lời chúc">
-                <button type="submit">Gửi</button>
-            </form>
-            <div id="wish-list"></div>
-        </div>
-    </section>
-    
-    <section id="map" class="section reveal">
-        <div class="container">
-            <h2>Địa điểm tổ chức</h2>
-            <div id="map-container"></div>
-        </div>
-    </section>
-    
-    <script src="script.js"></script>
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script>
-        ScrollReveal().reveal('.reveal', { delay: 300, distance: '50px', origin: 'bottom', duration: 1000 });
-        
-        document.addEventListener("DOMContentLoaded", function() {
-            var countDownDate = new Date("Dec 12, 2025 00:00:00").getTime();
-            var x = setInterval(function() {
-                var now = new Date().getTime();
-                var distance = countDownDate - now;
-                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-                if (distance < 0) {
-                    clearInterval(x);
-                    document.getElementById("countdown").innerHTML = "Chúc mừng ngày cưới!";
-                }
-            }, 1000);
-        
-            var map = L.map('map-container').setView([10.762622, 106.660172], 13);
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '© OpenStreetMap contributors'
-            }).addTo(map);
-            L.marker([10.762622, 106.660172]).addTo(map)
-                .bindPopup('Địa điểm tổ chức cưới')
-                .openPopup();
-        
-            document.getElementById("music-toggle").addEventListener("click", function() {
-                var music = document.getElementById("background-music");
-                if (music.paused) {
-                    music.play();
-                } else {
-                    music.pause();
-                }
-            });
-        });
-    </script>
+
+<header>
+    <h1>Chào mừng đến với đám cưới của [Tên Cô Dâu] & [Tên Chú Rể]</h1>
+    <p>Ngày [Ngày Tháng Năm]</p>
+    <!-- Đếm ngược thời gian -->
+    <div id="countdown"></div>
+</header>
+
+<nav>
+    <a href="#story">Câu chuyện tình yêu</a>
+    <a href="#info">Thông tin đám cưới</a>
+    <a href="#guestbook">Lời chúc từ khách mời</a>
+    <a href="#album">Album ảnh</a>
+    <a href="#registry">Quà cưới và thiệp mời</a>
+    <a href="#contact">Liên hệ</a>
+</nav>
+
+<section id="story">
+    <h2>Câu chuyện tình yêu</h2>
+    <p>[Mô tả ngắn gọn về câu chuyện tình yêu của bạn]</p>
+    <!-- Thêm timeline và ảnh kỷ niệm -->
+</section>
+
+<section id="info">
+    <h2>Thông tin đám cưới</h2>
+    <p>Thời gian: [Thời gian]</p>
+    <p>Địa điểm: [Địa điểm]</p>
+    <!-- Thêm bản đồ và lịch trình -->
+</section>
+
+<section id="guestbook">
+    <h2>Lời chúc từ khách mời</h2>
+    <!-- Thêm guestbook ảo -->
+</section>
+
+<section id="album">
+    <h2>Album ảnh</h2>
+    <!-- Thêm ảnh cưới và ảnh kỷ niệm -->
+</section>
+
+<section id="registry">
+    <h2>Quà cưới và thiệp mời</h2>
+    <!-- Thêm danh sách quà cưới và thiệp mời trực tuyến -->
+</section>
+
+<section id="contact">
+    <h2>Liên hệ</h2>
+    <p>Email: [Email]</p>
+    <p>Điện thoại: [Số điện thoại]</p>
+    <!-- Thêm form liên hệ -->
+</section>
+
+<footer>
+    <p>Cảm ơn bạn đã ghé thăm trang web đám cưới của chúng tôi!</p>
+</footer>
+
+<script>
+    // Đếm ngược thời gian
+    const countdown = () => {
+        const countDate = new Date("[02 23,2025] 11:00:00").getTime();
+        const now = new Date().getTime();
+        const gap = countDate - now;
+
+        const second = 1000;
+        const minute = second * 60;
+        const hour = minute * 60;
+        const day = hour * 24;
+
+        const textDay = Math.floor(gap / day);
+        const textHour = Math.floor((gap % day) / hour);
+        const textMinute = Math.floor((gap % hour) / minute);
+        const textSecond = Math.floor((gap % minute) / second);
+
+        document.getElementById('countdown').innerHTML = 
+            `${textDay} ngày ${textHour} giờ ${textMinute} phút ${textSecond} giây`;
+    };
+
+    setInterval(countdown, 1000);
+</script>
+
 </body>
 </html>
