@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Wedding</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+    <header class="parallax">
+        <div class="header-content">
+            <h1>John & Jane</h1>
+            <p>Ngày cưới: 12/12/2025</p>
+            <div id="countdown"></div>
+        </div>
+    </header>
+    
+    <nav class="navbar">
+        <a href="#story">Câu chuyện</a>
+        <a href="#gallery">Ảnh cưới</a>
+        <a href="#video">Video</a>
+        <a href="#timeline">Hành trình</a>
+        <a href="#wishes">Lời chúc</a>
+        <a href="#map">Bản đồ</a>
+    </nav>
+    
+    <section id="story" class="section reveal">
+        <h2>Câu chuyện tình yêu</h2>
+        <p>Chúng tôi gặp nhau vào một ngày đẹp trời...</p>
+    </section>
+    
+    <section id="gallery" class="section gallery reveal">
+        <h2>Ảnh cưới</h2>
+        <div class="grid">
+            <img src="image1.jpg" alt="Ảnh cưới">
+            <img src="image2.jpg" alt="Ảnh cưới">
+        </div>
+    </section>
+    
+    <section id="video" class="section reveal">
+        <h2>Video cưới</h2>
+        <iframe src="https://www.youtube.com/embed/videoID" allowfullscreen></iframe>
+    </section>
+    
+    <section id="timeline" class="section reveal">
+        <h2>Hành trình tình yêu</h2>
+        <ul>
+            <li>2019 - Lần đầu gặp nhau</li>
+            <li>2021 - Lời tỏ tình đầu tiên</li>
+            <li>2025 - Ngày cưới</li>
+        </ul>
+    </section>
+    
+    <section id="wishes" class="section reveal">
+        <h2>Gửi lời chúc</h2>
+        <form id="wish-form">
+            <input type="text" id="wish-input" placeholder="Nhập lời chúc">
+            <button type="submit">Gửi</button>
+        </form>
+        <div id="wish-list"></div>
+    </section>
+    
+    <section id="map" class="section reveal">
+        <h2>Địa điểm tổ chức</h2>
+        <div id="map-container"></div>
+    </section>
+    
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        ScrollReveal().reveal('.reveal', { delay: 300, distance: '50px', origin: 'bottom', duration: 1000 });
+    </script>
+</body>
+</html>
