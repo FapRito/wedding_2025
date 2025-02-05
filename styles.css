@@ -6,6 +6,59 @@ body {
     margin: 0;
     padding: 0;
 }
+#guestbook-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#guestbook-form input,
+#guestbook-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#guestbook-form button {
+    align-self: flex-start;
+    background-color: #d23669;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#guestbook-form button:hover {
+    background-color: #b0305a;
+}
+
+#guestbook-entries {
+    margin-top: 20px;
+}
+
+.entry {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.entry h3 {
+    margin: 0 0 5px;
+    font-size: 1.2em;
+    color: #d23669;
+}
+
+.entry p {
+    margin: 0;
+    font-size: 1em;
+}
 .gallery {
     display: flex;
     flex-wrap: wrap;
