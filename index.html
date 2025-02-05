@@ -11,9 +11,13 @@
 <body>
     <header class="parallax">
         <div class="header-content">
-            <h1>John & Jane</h1>
+            <h1 class="bride-groom-name">John & Jane</h1>
             <p>Ngày cưới: 12/12/2025</p>
             <div id="countdown"></div>
+            <button id="music-toggle">🎵 Bật/Tắt nhạc</button>
+            <audio id="background-music" loop>
+                <source src="wedding_music.mp3" type="audio/mpeg">
+            </audio>
         </div>
     </header>
     
@@ -21,7 +25,6 @@
         <ul>
             <li><a href="#story">Câu chuyện</a></li>
             <li><a href="#gallery">Ảnh cưới</a></li>
-            <li><a href="#video">Video</a></li>
             <li><a href="#timeline">Hành trình</a></li>
             <li><a href="#wishes">Lời chúc</a></li>
             <li><a href="#map">Bản đồ</a></li>
@@ -42,13 +45,6 @@
                 <img src="image1.jpg" alt="Ảnh cưới">
                 <img src="image2.jpg" alt="Ảnh cưới">
             </div>
-        </div>
-    </section>
-    
-    <section id="video" class="section reveal">
-        <div class="container">
-            <h2>Video cưới</h2>
-            <iframe src="https://www.youtube.com/embed/videoID" allowfullscreen></iframe>
         </div>
     </section>
     
@@ -85,6 +81,40 @@
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
         ScrollReveal().reveal('.reveal', { delay: 300, distance: '50px', origin: 'bottom', duration: 1000 });
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            var countDownDate = new Date("Dec 12, 2025 00:00:00").getTime();
+            var x = setInterval(function() {
+                var now = new Date().getTime();
+                var distance = countDownDate - now;
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown").innerHTML = "Chúc mừng ngày cưới!";
+                }
+            }, 1000);
+        
+            var map = L.map('map-container').setView([10.762622, 106.660172], 13);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+            L.marker([10.762622, 106.660172]).addTo(map)
+                .bindPopup('Địa điểm tổ chức cưới')
+                .openPopup();
+        
+            document.getElementById("music-toggle").addEventListener("click", function() {
+                var music = document.getElementById("background-music");
+                if (music.paused) {
+                    music.play();
+                } else {
+                    music.pause();
+                }
+            });
+        });
     </script>
 </body>
 </html>
