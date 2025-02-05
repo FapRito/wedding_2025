@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Trang Web Đám Cưới</title>
+    <title>Happy Wedding</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -54,8 +54,8 @@
 <body>
 
 <header>
-    <h1>Chào mừng đến với đám cưới của [Tên Cô Dâu] & [Tên Chú Rể]</h1>
-    <p>Ngày [Ngày Tháng Năm]</p>
+    <h1>Chào mừng đến với đám cưới của H & O</h1>
+    <p>Ngày 23 tháng 2 năm 2025</p>
     <!-- Đếm ngược thời gian -->
     <div id="countdown"></div>
 </header>
@@ -84,6 +84,16 @@
 
 <section id="guestbook">
     <h2>Lời chúc từ khách mời</h2>
+    <form id="guestbook-form">
+        <label for="name">Tên:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="message">Lời chúc:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit">Gửi lời chúc</button>
+    </form>
+    <div id="guestbook-entries">
+        <!-- Các lời chúc sẽ được hiển thị ở đây -->
+    </div>
     <!-- Thêm guestbook ảo -->
 </section>
 
