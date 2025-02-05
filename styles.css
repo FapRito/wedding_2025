@@ -1,243 +1,80 @@
-/* Đặt font chữ chung cho toàn bộ trang */
 body {
-    font-family: 'Georgia', serif;
-    color: #333;
-    background-color: #fdfdfd;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-}
-#guestbook-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-#guestbook-form input,
-#guestbook-form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-}
-
-#guestbook-form button {
-    align-self: flex-start;
-    background-color: #d23669;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#guestbook-form button:hover {
-    background-color: #b0305a;
-}
-
-#guestbook-entries {
-    margin-top: 20px;
-}
-
-.entry {
     background-color: #f9f9f9;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
+    color: #333;
 }
 
-.entry h3 {
-    margin: 0 0 5px;
-    font-size: 1.2em;
-    color: #d23669;
-}
-
-.entry p {
-    margin: 0;
-    font-size: 1em;
-}
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-}
-
-.gallery img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-/* Định dạng cho phần tiêu đề */
 header {
-    background-image: url('path_to_your_image.jpg');
-    background-size: cover;
-    background-position: center;
-    color: #fff;
     text-align: center;
-    padding: 150px 20px;
-    position: relative;
-}
-
-header::after {
-    content: '';
-    background-color: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    padding: 50px 20px;
+    background-color: #ffcccb;
 }
 
 header h1 {
     font-size: 3em;
     margin: 0;
-    position: relative;
-    z-index: 1;
 }
 
-header p {
+header h2 {
+    font-size: 2em;
+    margin: 10px 0;
+}
+
+#countdown {
     font-size: 1.5em;
-    margin: 10px 0 0;
-    position: relative;
-    z-index: 1;
+    margin-top: 20px;
 }
 
-/* Định dạng cho thanh điều hướng */
-nav {
-    background-color: #333;
-    overflow: hidden;
-}
-
-nav a {
-    float: left;
-    display: block;
-    color: #fff;
-    text-align: center;
-    padding: 14px 20px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-nav a:hover {
-    background-color: #555;
-}
-
-/* Định dạng cho các phần nội dung */
 section {
-    padding: 60px 20px;
-    margin: 20px auto;
-    max-width: 800px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
-
-section h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+    padding: 40px 20px;
     text-align: center;
-    color: #d23669;
 }
 
-section p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    text-align: justify;
+#story, #event-details, #guestbook {
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Định dạng cho phần footer */
+#guestbook-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#guestbook-form input, #guestbook-form textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#guestbook-form button {
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#guestbook-form button:hover {
+    background-color: #ff3b2f;
+}
+
+#guestbook-entries {
+    margin-top: 20px;
+    text-align: left;
+    padding: 0 20px;
+}
+
 footer {
     text-align: center;
     padding: 20px;
     background-color: #333;
     color: #fff;
-}
-
-/* Định dạng cho đồng hồ đếm ngược */
-#countdown {
-    font-size: 1.5em;
-    margin-top: 20px;
-    color: #ffd700;
-    position: relative;
-    z-index: 1;
-}
-
-/* Định dạng cho các hình ảnh */
-img {
-    max-width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-/* Định dạng cho các nút */
-button {
-    background-color: #d23669;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #b0305a;
-}
-
-/* Định dạng cho form liên hệ */
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-form input, form textarea {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-}
-
-form input:focus, form textarea:focus {
-    border-color: #d23669;
-    outline: none;
-}
-
-form button {
-    align-self: flex-end;
-}
-
-/* Định dạng cho hiệu ứng cuộn mượt mà */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Định dạng cho các hiệu ứng khi cuộn trang */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.fade-in {
-    animation: fadeIn 1s ease-in-out;
 }
