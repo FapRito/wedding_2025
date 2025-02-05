@@ -14,10 +14,7 @@ function updateCountdown() {
         Còn ${days} ngày ${hours} giờ ${minutes} phút ${seconds} giây
     `;
 
-    if (timeLeft < 0) {
-        clearInterval(countdownInterval);
-        document.getElementById("countdown").innerHTML = "Đám cưới đã diễn ra!";
-    }
+   
 }
 
 const countdownInterval = setInterval(updateCountdown, 1000);
