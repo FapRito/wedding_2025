@@ -1,5 +1,5 @@
 // Đếm ngược thời gian đến ngày cưới
-const weddingDate = new Date("2023-12-31T00:00:00").getTime(); // Thay đổi ngày cưới tại đây
+const weddingDate = new Date("2025-02-23T11:00:00").getTime(); // Thay đổi ngày cưới tại đây
 
 function updateCountdown() {
     const now = new Date().getTime();
